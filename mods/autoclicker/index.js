@@ -10,7 +10,6 @@ ModAPI.addEventListener("key", event => {
 
 let autoClickInterval = setInterval(() => {
     if (toggled) {
-        console.log("click");
         ModAPI.clickMouse();
     }
 }, 1000 / CURRENT_CPS);

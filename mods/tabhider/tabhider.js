@@ -8,7 +8,7 @@ function updateTab(title, favicon) {
     newFavicon.rel = "shortcut icon";
     newFavicon.href = "http://ssl.gstatic.com/classroom/favicon.png";
     
-    var existingFavicon = document.querySelector('link[rel="shortcut icon"]') || document.createElement('link');
+    let existingFavicon = document.querySelector('link[rel="shortcut icon"]') || document.createElement('link');
     
     document.head.removeChild(existingFavicon);
     document.head.appendChild(newFavicon);

@@ -2,15 +2,17 @@ let currentTitle = "Google Classroom";
 let currentFavicon = "http://ssl.gstatic.com/classroom/favicon.png";
 
 function updateTab(title, favicon) {
-    document.title = NEW_TITLE;
+    document.title = title;
 
     let newFavicon = document.createElement('link');
     newFavicon.rel = "shortcut icon";
-    newFavicon.href = "http://ssl.gstatic.com/classroom/favicon.png";
+    newFavicon.href = favicon;
     
-    let existingFavicon = document.querySelector('link[rel="shortcut icon"]') || document.createElement('link');
+    let existingFavicon = document.querySelector('link[rel="shortcut icon"]');
     
-    document.head.removeChild(existingFavicon);
+    if (existingFavicon) {
+        document.head.removeChild(existingFavicon);
+    }
     document.head.appendChild(newFavicon);
 }
 
